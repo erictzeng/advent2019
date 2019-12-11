@@ -35,7 +35,9 @@ class IntcodeProcessor:
         self.halted = False
         self.relative_base = 0
 
-    def run(self):
+    def run(self, inputs=None):
+        if inputs is not None:
+            self.inputs.extend(inputs)
         self.all_outputs.extend(self.outputs)
         self.outputs = []
         should_suspend = False
